@@ -1,5 +1,6 @@
-torch>=2.0.0
-torchvision
+# torch>=2.0.0
+# torchvision
+# ninja
 cupy-cuda12x
 transformers
 controlnet-aux==0.0.7
