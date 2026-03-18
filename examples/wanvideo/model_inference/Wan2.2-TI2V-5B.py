@@ -19,16 +19,16 @@ pipe = WanVideoPipeline.from_pretrained(
 )
 pipe.enable_vram_management()
 
-# Text-to-video
-video = pipe(
-    prompt="A man walking from left to right in a city street. A dog walking from right to left in the same street.",
-    negative_prompt="",
-    # negative_prompt="色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
-    seed=0, tiled=True,
-    height=704, width=1248,
-    num_frames=121,
-)
-save_video(video, "video1.mp4", fps=15, quality=5)
+# # Text-to-video
+# video = pipe(
+#     prompt="A man walking from left to right in a city street. A dog walking from right to left in the same street. The dog and man meet at the center of the street.",
+#     # negative_prompt="",
+#     negative_prompt="色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+#     seed=0, tiled=True,
+#     height=704, width=1248,
+#     num_frames=121,
+# )
+# save_video(video, "video1.mp4", fps=15, quality=5)
 
 # Image-to-video
 # dataset_snapshot_download(
@@ -65,7 +65,8 @@ video = pipe(
             Maintain scene consistency, including surrounding vehicles, pedestrians, buildings, and traffic lights.
             Ensure natural motion of all dynamic objects and realistic temporal continuity.
             """,
-    negative_prompt="",
+    negative_prompt="色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走",
+    # negative_prompt 最好不要改，因为训练的时候全用的这个。
     # negative_prompt = """
     #         blurry, low resolution, pixelated, noisy,
     #         distorted geometry, warped cars, stretched objects,
